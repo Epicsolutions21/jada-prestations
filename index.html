@@ -3,391 +3,530 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>JADA PRESTATIONS — Groupe Multi-Services | Bénin</title>
-  <meta name="description" content="JADA PRESTATIONS : Achat-vente fournitures bureautiques, livraison, communication, formation et conseil financier. Cotonou, Bénin & Afrique de l'Ouest.">
-  <meta name="theme-color" content="#0D1B2A">
+  <title>JADA PRESTATIONS — Groupe Multi-Services | Cotonou, Bénin</title>
+  <meta name="description" content="JADA PRESTATIONS SARL : Fourniture bureautique, livraison ZéJo, communication, formation, services financiers. Votre partenaire multi-services à Cotonou et dans toute l'Afrique de l'Ouest.">
+  <meta name="theme-color" content="#0A1628">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M47.5,30 L62.5,50 L47.5,70 L32.5,50 Z' fill='%23C9A84C'/%3E%3Cpath d='M40,10 L70,50 L40,90 L10,50 Z' fill='none' stroke='%23C9A84C' stroke-width='2'/%3E%3Cpath d='M55,10 L85,50 L55,90 L25,50 Z' fill='none' stroke='%23C9A84C' stroke-width='2'/%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Crect x='15' y='15' width='70' height='70' fill='none' stroke='%23D4AF37' stroke-width='3'/%3E%3Cline x1='50' y1='15' x2='50' y2='85' stroke='%23D4AF37' stroke-width='2'/%3E%3Cline x1='15' y1='50' x2='85' y2='50' stroke='%23D4AF37' stroke-width='2'/%3E%3Ccircle cx='50' cy='50' r='12' fill='%23D4AF37'/%3E%3C/svg%3E">
   <style>
     *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
     :root{
-      --navy:#0D1B2A;--navy-mid:#1A2E45;--navy-lt:#243B55;
-      --gold:#C9A84C;--gold-lt:#E2C97E;--gold-dk:#A07830;
-      --cream:#F5F0E8;--white:#FFFFFF;--grey:#8A9BB0;--charcoal:#0B1623
+      --navy:#0A1628;--slate:#1E2A3A;--slate-lt:#2A3A4E;
+      --gold:#D4AF37;--gold-lt:#F5E6B8;--gold-dk:#A8842A;
+      --white:#FFFFFF;--grey:#8899B0;--deep:#080E1A
     }
-    html{scroll-behavior:smooth}
+    html{scroll-behavior:smooth;scroll-padding-top:80px}
     body{
-      font-family:Barlow,sans-serif;
-      background:var(--cream);color:var(--navy);
-      line-height:1.6;overflow-x:hidden
+      font-family:Inter,sans-serif;background:var(--navy);color:var(--white);
+      line-height:1.7;overflow-x:hidden;-webkit-font-smoothing:antialiased
     }
+    h1,h2,h3,h4{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;line-height:1.2}
     a{color:inherit;text-decoration:none}
     img{max-width:100%;display:block}
 
-    /* ── DIAMOND PATTERN ── */
-    .diamond-bg{
-      position:absolute;inset:0;overflow:hidden;
-      opacity:.06;pointer-events:none
+    .container{max-width:1200px;margin:0 auto;padding:0 24px}
+
+    /* ── NAV ── */
+    nav{
+      position:fixed;top:0;left:0;right:0;z-index:100;
+      background:rgba(10,22,40,.92);backdrop-filter:blur(16px);
+      border-bottom:1px solid rgba(212,175,55,.1);height:72px
     }
-    .diamond-bg svg{width:100%;height:100%}
+    nav .container{
+      display:flex;align-items:center;justify-content:space-between;height:100%
+    }
+    .logo{
+      font-family:'Plus Jakarta Sans',sans-serif;font-weight:800;font-size:1.25rem;
+      letter-spacing:-.02em;display:flex;align-items:center;gap:8px
+    }
+    .logo span{color:var(--gold)}
+    .logo .mark{width:28px;height:28px;border:2px solid var(--gold);position:relative;display:inline-block;border-radius:4px}
+    .logo .mark::after{content:'';position:absolute;inset:4px;background:var(--gold);border-radius:2px}
+    .nav-links{display:flex;gap:32px;list-style:none}
+    .nav-links a{
+      font-size:.875rem;font-weight:500;color:var(--grey);
+      transition:color .3s;position:relative
+    }
+    .nav-links a::after{
+      content:'';position:absolute;bottom:-4px;left:0;width:0;height:2px;
+      background:var(--gold);transition:width .3s
+    }
+    .nav-links a:hover{color:var(--gold)}
+    .nav-links a:hover::after{width:100%}
+    .nav-cta{
+      padding:8px 20px;background:var(--gold);color:var(--navy);
+      border-radius:6px;font-weight:600;font-size:.875rem;
+      transition:background .3s
+    }
+    .nav-cta:hover{background:var(--gold-lt)}
+    .nav-toggle{display:none;background:none;border:none;color:var(--white);font-size:1.5rem;cursor:pointer}
 
     /* ── HERO ── */
     .hero{
-      background:var(--navy);min-height:100vh;
-      display:flex;flex-direction:column;align-items:center;justify-content:center;
-      position:relative;overflow:hidden;padding:60px 24px
+      min-height:100vh;display:flex;align-items:center;position:relative;
+      padding:120px 0 80px;overflow:hidden
     }
-    .hero::after{
+    .hero::before{
       content:'';position:absolute;inset:0;
-      background:
-        radial-gradient(ellipse 90% 70% at 50% 100%,rgba(201,168,76,.1) 0%,transparent 70%),
-        radial-gradient(ellipse 50% 40% at 20% 20%,rgba(201,168,76,.05) 0%,transparent 60%)
+      background:radial-gradient(ellipse 60% 50% at 70% 40%,rgba(212,175,55,.06),transparent 70%);
+      pointer-events:none
     }
-    .hero-content{position:relative;z-index:2;text-align:center;max-width:880px}
-    .hero-emblem{margin-bottom:32px}
+    .hero-grid{
+      display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center
+    }
+    .hero-badge{
+      display:inline-flex;align-items:center;gap:8px;
+      padding:6px 16px;border:1px solid rgba(212,175,55,.3);border-radius:100px;
+      font-size:.8rem;color:var(--gold);margin-bottom:24px
+    }
+    .hero h1{
+      font-size:3.5rem;font-weight:800;letter-spacing:-.03em;
+      margin-bottom:20px
+    }
+    .hero h1 em{font-style:normal;color:var(--gold)}
+    .hero p{
+      font-size:1.125rem;color:var(--grey);max-width:520px;
+      margin-bottom:36px;line-height:1.8
+    }
+    .hero-actions{display:flex;gap:16px;flex-wrap:wrap}
+    .btn-primary{
+      padding:14px 32px;background:var(--gold);color:var(--navy);
+      border-radius:8px;font-weight:600;font-size:.95rem;
+      transition:all .3s;display:inline-flex;align-items:center;gap:8px
+    }
+    .btn-primary:hover{background:var(--gold-lt);transform:translateY(-2px)}
+    .btn-secondary{
+      padding:14px 32px;border:1px solid rgba(255,255,255,.2);border-radius:8px;
+      font-weight:500;font-size:.95rem;color:var(--white);
+      transition:all .3s;display:inline-flex;align-items:center;gap:8px
+    }
+    .btn-secondary:hover{border-color:var(--gold);color:var(--gold)}
 
-    .hero-eyebrow{
-      font-family:'Barlow Condensed',sans-serif;
-      font-size:11px;letter-spacing:6px;text-transform:uppercase;
+    /* ── HERO VISUAL ── */
+    .hero-visual{position:relative;display:flex;justify-content:center}
+    .hero-frame{
+      width:400px;height:500px;position:relative
+    }
+    .hero-frame-inner{
+      position:absolute;inset:30px;
+      background:linear-gradient(135deg,var(--slate),var(--slate-lt));
+      border-radius:16px;display:flex;align-items:center;justify-content:center;
+      overflow:hidden
+    }
+    .hero-frame-inner svg{width:60%;height:60%}
+    .hero-frame .line{position:absolute;border:1px solid rgba(212,175,55,.3)}
+    .hero-frame .line-tl{inset:0 60% 60% 0;border-right:none;border-bottom:none;border-radius:16px 0 0 0}
+    .hero-frame .line-br{inset:60% 0 0 60%;border-left:none;border-top:none;border-radius:0 0 16px 0}
+
+    /* ── SECTION COMMON ── */
+    section{padding:100px 0}
+    .section-label{
+      font-size:.8rem;font-weight:600;letter-spacing:.12em;text-transform:uppercase;
       color:var(--gold);margin-bottom:12px
     }
-    .hero-title{
-      font-family:'Cormorant Garamond',serif;
-      font-size:clamp(48px,10vw,96px);
-      font-weight:300;color:var(--white);
-      letter-spacing:6px;line-height:1
-    }
-    .hero-title span{color:var(--gold);font-weight:600}
-    .hero-sub{
-      font-size:clamp(14px,2vw,18px);font-weight:300;
-      color:var(--grey);margin-top:20px;max-width:600px;margin-inline:auto;
-      letter-spacing:.5px
-    }
-    .hero-divider{
-      width:60px;height:1px;
-      background:linear-gradient(90deg,transparent,var(--gold),transparent);
-      margin:32px auto
-    }
-    .hero-poles{
-      display:flex;gap:12px;flex-wrap:wrap;justify-content:center
-    }
-    .pole-tag{
-      font-family:'Barlow Condensed',sans-serif;
-      font-size:11px;letter-spacing:3px;text-transform:uppercase;
-      color:var(--gold-lt);
-      border:1px solid rgba(201,168,76,.25);
-      padding:8px 18px;border-radius:2px;
-      transition:all .2s
-    }
-    .pole-tag:hover{border-color:var(--gold);color:var(--gold)}
-    .hero-cta{margin-top:44px;display:flex;gap:16px;flex-wrap:wrap;justify-content:center}
-    .btn{
-      font-family:'Barlow Condensed',sans-serif;
-      font-size:12px;letter-spacing:3px;text-transform:uppercase;
-      padding:14px 32px;border-radius:2px;font-weight:600;
-      transition:all .3s;display:inline-block
-    }
-    .btn-primary{background:var(--gold);color:var(--navy)}
-    .btn-primary:hover{
-      background:var(--gold-lt);
-      transform:translateY(-2px);
-      box-shadow:0 8px 28px rgba(201,168,76,.25)
-    }
-    .btn-outline{
-      border:1px solid rgba(255,255,255,.2);
-      color:var(--white)
-    }
-    .btn-outline:hover{
-      border-color:var(--gold);color:var(--gold);
-      transform:translateY(-2px)
-    }
-
-    /* ── SECTION ── */
-    section{padding:100px 24px;max-width:1080px;margin:0 auto}
-    .section-eyebrow{
-      font-family:'Barlow Condensed',sans-serif;
-      font-size:10px;letter-spacing:5px;text-transform:uppercase;
-      color:var(--gold-dk);margin-bottom:8px
-    }
     .section-title{
-      font-family:'Cormorant Garamond',serif;
-      font-size:clamp(28px,4vw,38px);
-      font-weight:600;color:var(--navy);line-height:1.2;
-      margin-bottom:48px
+      font-size:2.5rem;margin-bottom:16px
     }
+    .section-sub{
+      color:var(--grey);max-width:640px;font-size:1.05rem;line-height:1.8
+    }
+    .section-header{text-align:center;margin-bottom:64px}
 
-    /* ── POLES ── */
+    /* ── POLES / SERVICES ── */
     .poles-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-      gap:24px
+      display:grid;grid-template-columns:repeat(3,1fr);gap:24px
     }
     .pole-card{
-      background:var(--white);border-radius:0;
-      padding:32px;position:relative;
-      border-left:3px solid var(--gold);
-      transition:all .3s
+      background:var(--slate);border-radius:16px;padding:40px 32px;
+      border:1px solid rgba(255,255,255,.04);
+      transition:all .4s;position:relative;overflow:hidden
     }
-    .pole-card:hover{
-      transform:translateX(4px);
-      box-shadow:0 12px 36px rgba(13,27,42,.08)
+    .pole-card::before{
+      content:'';position:absolute;top:0;left:0;right:0;height:3px;
+      background:var(--gold);transform:scaleX(0);transform-origin:left;
+      transition:transform .4s
     }
-    .pole-icon{font-size:28px;margin-bottom:16px;display:block}
-    .pole-name{
-      font-family:'Barlow Condensed',sans-serif;
-      font-size:15px;font-weight:700;letter-spacing:1.5px;
-      text-transform:uppercase;color:var(--navy);margin-bottom:2px
+    .pole-card:hover{transform:translateY(-6px);border-color:rgba(212,175,55,.2)}
+    .pole-card:hover::before{transform:scaleX(1)}
+    .pole-card .icon{
+      width:48px;height:48px;border-radius:12px;
+      background:rgba(212,175,55,.1);display:flex;align-items:center;
+      justify-content:center;margin-bottom:20px;font-size:1.3rem
     }
-    .pole-sub{
-      font-size:11px;color:var(--gold-dk);font-weight:500;
-      margin-bottom:12px;font-family:'Barlow Condensed',sans-serif;
-      letter-spacing:1px;text-transform:uppercase
+    .pole-card h3{font-size:1.15rem;margin-bottom:10px;color:var(--white)}
+    .pole-card p{font-size:.9rem;color:var(--grey);line-height:1.7}
+    .pole-card:last-child:nth-child(2){grid-column:span 3}
+    .pole-card.empty{visibility:hidden}
+
+    /* ── ABOUT ── */
+    .about-grid{
+      display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center
     }
-    .pole-desc{
-      font-size:13px;color:#667;line-height:1.7
+    .about-visual{
+      background:var(--slate);border-radius:16px;padding:48px;
+      display:grid;grid-template-columns:1fr 1fr;gap:16px
     }
+    .stat-card{
+      text-align:center;padding:24px 16px;
+      background:rgba(255,255,255,.03);border-radius:12px
+    }
+    .stat-card .num{
+      font-family:'Plus Jakarta Sans',sans-serif;font-size:2rem;font-weight:800;
+      color:var(--gold);display:block;margin-bottom:4px
+    }
+    .stat-card .label{font-size:.8rem;color:var(--grey)}
+    .about-text h3{font-size:1.5rem;margin-bottom:16px}
+    .about-text p{color:var(--grey);margin-bottom:16px;line-height:1.8}
 
     /* ── CONTACT ── */
-    .contact-block{background:var(--white);padding:56px 48px;margin-top:-24px}
-    @media(max-width:600px){.contact-block{padding:36px 24px}}
-    
     .contact-grid{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-      gap:32px
+      display:grid;grid-template-columns:1fr 1fr;gap:64px;align-items:start
     }
-    .contact-item{text-align:center}
-    .contact-icon{font-size:24px;margin-bottom:8px;display:block}
-    .contact-label{
-      font-size:10px;letter-spacing:3px;text-transform:uppercase;
-      color:var(--gold-dk);margin-bottom:4px;
-      font-family:'Barlow Condensed',sans-serif
+    .contact-info h3{font-size:1.5rem;margin-bottom:16px}
+    .contact-info p{color:var(--grey);margin-bottom:24px;line-height:1.8}
+    .contact-item{
+      display:flex;align-items:center;gap:16px;margin-bottom:16px
     }
-    .contact-value{font-size:15px;font-weight:500}
-    .contact-item a{transition:color .2s}
-    .contact-item a:hover{color:var(--gold-dk)}
-
-    .address-row{
-      margin-top:40px;padding-top:32px;
-      border-top:1px solid rgba(13,27,42,.08);
-      text-align:center
+    .contact-item .ci-icon{
+      width:44px;height:44px;border-radius:10px;
+      background:rgba(212,175,55,.1);border:1px solid rgba(212,175,55,.15);
+      display:flex;align-items:center;justify-content:center;
+      font-size:1.1rem;flex-shrink:0
     }
-    .address-row p{
-      font-family:'Cormorant Garamond',serif;
-      font-size:20px;letter-spacing:1.5px;font-weight:300
+    .contact-item .ci-label{font-size:.8rem;color:var(--grey);margin-bottom:2px}
+    .contact-item .ci-value{font-weight:500}
+    .contact-form{
+      background:var(--slate);border-radius:16px;padding:40px;
+      border:1px solid rgba(255,255,255,.04)
     }
-    .address-row span{font-weight:600}
-
-    /* ── CTA BAR ── */
-    .cta-bar{
-      background:var(--navy);text-align:center;
-      padding:80px 24px
+    .contact-form h4{font-size:1.2rem;margin-bottom:20px}
+    .form-group{margin-bottom:16px}
+    .form-group input,.form-group textarea{
+      width:100%;padding:12px 16px;background:var(--navy);
+      border:1px solid rgba(255,255,255,.08);border-radius:8px;
+      color:var(--white);font-family:Inter,sans-serif;font-size:.9rem;
+      transition:border-color .3s;outline:none
     }
-    .cta-bar .section-eyebrow{color:var(--gold-lt)}
-    .cta-bar h2{
-      font-family:'Cormorant Garamond',serif;
-      font-size:clamp(28px,4vw,36px);
-      color:var(--white);font-weight:300;
-      letter-spacing:4px;margin-bottom:12px
-    }
-    .cta-bar p{
-      color:var(--grey);font-size:14px;
-      max-width:480px;margin:0 auto 36px
-    }
-    .btn-whatsapp{
-      display:inline-flex;align-items:center;gap:10px;
-      font-family:'Barlow Condensed',sans-serif;
-      font-size:12px;letter-spacing:3px;text-transform:uppercase;
-      background:#25D366;color:white;
-      padding:16px 40px;border-radius:2px;font-weight:600;
-      transition:all .3s
-    }
-    .btn-whatsapp:hover{
-      transform:translateY(-2px);
-      box-shadow:0 8px 28px rgba(37,211,102,.25)
-    }
+    .form-group input:focus,.form-group textarea:focus{border-color:var(--gold)}
+    .form-group textarea{height:100px;resize:vertical}
+    .form-group input::placeholder,.form-group textarea::placeholder{color:var(--grey)}
 
     /* ── FOOTER ── */
-    .site-footer{
-      background:var(--charcoal);
-      text-align:center;padding:36px 24px
+    footer{
+      background:var(--deep);padding:48px 0 24px;
+      border-top:1px solid rgba(255,255,255,.04)
     }
-    .site-footer p{
-      font-family:'Barlow Condensed',sans-serif;
-      font-size:10px;letter-spacing:3px;text-transform:uppercase;
-      color:var(--grey)
+    .footer-grid{
+      display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:40px;margin-bottom:40px
     }
-    .site-footer small{
-      font-size:9px;color:rgba(138,155,176,.4);
-      letter-spacing:2px
+    .footer-brand .logo{margin-bottom:12px}
+    .footer-brand p{color:var(--grey);font-size:.875rem;max-width:320px;line-height:1.7}
+    .footer-col h4{
+      font-size:.8rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;
+      color:var(--gold);margin-bottom:16px
+    }
+    .footer-col a{
+      display:block;color:var(--grey);font-size:.875rem;margin-bottom:8px;
+      transition:color .3s
+    }
+    .footer-col a:hover{color:var(--white)}
+    .footer-bottom{
+      border-top:1px solid rgba(255,255,255,.04);padding-top:20px;
+      display:flex;justify-content:space-between;align-items:center;
+      font-size:.8rem;color:var(--grey)
     }
 
-    /* ── SCROLL ANIMATIONS ── */
-    @keyframes fadeUp{
-      from{opacity:0;transform:translateY(30px)}
-      to{opacity:1;transform:translateY(0)}
+    /* ── RESPONSIVE ── */
+    @media(max-width:1024px){
+      .hero-grid{grid-template-columns:1fr;gap:48px;text-align:center}
+      .hero p{margin:0 auto 36px}
+      .hero-actions{justify-content:center}
+      .hero-visual{display:none}
+      .about-grid{grid-template-columns:1fr;gap:40px}
+      .contact-grid{grid-template-columns:1fr;gap:40px}
+      .poles-grid{grid-template-columns:1fr 1fr}
+      .footer-grid{grid-template-columns:1fr 1fr}
     }
-    .animate{animation:fadeUp .8s ease both}
-    .delay-1{animation-delay:.15s}
-    .delay-2{animation-delay:.3s}
-    .delay-3{animation-delay:.45s}
-    .delay-4{animation-delay:.6s}
-    .delay-5{animation-delay:.75s}
-    .delay-6{animation-delay:.9s}
-    .delay-7{animation-delay:1.05s}
-
+    @media(max-width:768px){
+      .nav-links{display:none}
+      .nav-toggle{display:block}
+      .hero h1{font-size:2.2rem}
+      .section-title{font-size:1.8rem}
+      .poles-grid{grid-template-columns:1fr}
+      .footer-grid{grid-template-columns:1fr;gap:32px}
+      .footer-bottom{flex-direction:column;gap:8px;text-align:center}
+      section{padding:64px 0}
+    }
   </style>
 </head>
 <body>
 
-<!-- ═══ HERO ═══ -->
-<div class="hero">
-  <div class="diamond-bg">
-    <svg viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" fill="none" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <pattern id="diamonds" x="0" y="0" width="180" height="180" patternUnits="userSpaceOnUse">
-          <path d="M90,20 L140,90 L90,160 L40,90 Z" stroke="#C9A84C" stroke-width=".8" opacity=".3"/>
-          <path d="M90,20 L140,90 L90,160 L40,90 Z" stroke="#C9A84C" stroke-width=".3" opacity=".15" transform="scale(.6) translate(38,38)"/>
-        </pattern>
-      </defs>
-      <rect width="1440" height="900" fill="url(#diamonds)"/>
-      <!-- Grand losange central subtil -->
-      <g transform="translate(720,450)" opacity=".04">
-        <path d="M0,-200 L300,0 L0,200 L-300,0 Z" stroke="#C9A84C" stroke-width="1"/>
-        <path d="M0,-140 L200,0 L0,140 L-200,0 Z" stroke="#C9A84C" stroke-width=".6"/>
-      </g>
-    </svg>
-  </div>
-  <div class="hero-content">
-    <p class="hero-eyebrow animate">Groupe Multi-Services</p>
+  <!-- ─── NAV ─── -->
+  <nav>
+    <div class="container">
+      <a href="#" class="logo"><span class="mark"></span> JADA<span>.</span></a>
+      <ul class="nav-links">
+        <li><a href="#poles">Pôles</a></li>
+        <li><a href="#about">À propos</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="https://wa.me/22966593943" class="nav-cta">WhatsApp</a></li>
+      </ul>
+      <button class="nav-toggle" onclick="this.nextElementSibling.style.display='flex'">☰</button>
+    </div>
+  </nav>
 
-    <div class="hero-emblem animate delay-1">
-      <svg width="200" height="96" viewBox="0 0 250 120" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="gG" x1="40" y1="20" x2="60" y2="80" gradientUnits="userSpaceOnUse">
-            <stop offset="0%" stop-color="#E2C97E"/><stop offset="50%" stop-color="#C9A84C"/><stop offset="100%" stop-color="#A07830"/>
-          </linearGradient>
-        </defs>
-        <g transform="translate(10,15)">
-          <path d="M47.5,30 L62.5,50 L47.5,70 L32.5,50 Z" fill="url(#gG)"/>
-          <path d="M40,10 L70,50 L40,90 L10,50 Z" fill="none" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round" opacity=".8"/>
-          <path d="M55,10 L85,50 L55,90 L25,50 Z" fill="none" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round"/>
-        </g>
-        <text x="110" y="50" font-family="Cormorant Garamond,serif" font-size="30" font-weight="600" fill="#FFFFFF" letter-spacing="4">JADA</text>
-        <text x="111" y="72" font-family="Barlow Condensed,sans-serif" font-size="13" font-weight="400" fill="#8A9BB0" letter-spacing="7">PRESTATIONS</text>
-        <line x1="110" y1="58" x2="240" y2="58" stroke="#C9A84C" stroke-width=".5" opacity=".4"/>
-      </svg>
-    </div>
-
-    <h1 class="hero-title animate delay-2">JADA <span>PRESTATIONS</span></h1>
-    <p class="hero-sub animate delay-3">
-      Les services qu'il vous faut, là où vous êtes.<br>
-      Fourniture bureautique · Livraison · Communication · Formation · Conseil financier
-    </p>
-    <div class="hero-divider animate delay-4"></div>
-    <div class="hero-poles animate delay-4">
-      <span class="pole-tag">Fourniture Bureautique</span>
-      <span class="pole-tag">Livraison</span>
-      <span class="pole-tag">Communication</span>
-      <span class="pole-tag">Formation</span>
-      <span class="pole-tag">Services Financiers</span>
-    </div>
-    <div class="hero-cta animate delay-5">
-      <a href="#contact" class="btn btn-primary">Nous écrire</a>
-      <a href="https://wa.me/22966593943" class="btn btn-outline" target="_blank" rel="noopener">WhatsApp</a>
-    </div>
-  </div>
-</div>
-
-<!-- ═══ PÔLES ═══ -->
-<section id="poles">
-  <p class="section-eyebrow">Savoir-faire</p>
-  <h2 class="section-title">Ce que nous faisons</h2>
-  <div class="poles-grid">
-    <div class="pole-card">
-      <span class="pole-icon">🖇️</span>
-      <div class="pole-name">Fourniture Bureautique</div>
-      <div class="pole-sub">JDP Fourniture Bureautique</div>
-      <div class="pole-desc">Achat et vente de matériels et équipements de bureau pour professionnels, institutions et collectivités.</div>
-    </div>
-    <div class="pole-card">
-      <span class="pole-icon">🚚</span>
-      <div class="pole-name">Livraison</div>
-      <div class="pole-sub">JDP Livraison — ZéJo</div>
-      <div class="pole-desc">Transport et livraison locale rapide. Prise en charge de vos colis et documents sur Cotonou et environs.</div>
-    </div>
-    <div class="pole-card">
-      <span class="pole-icon">📣</span>
-      <div class="pole-name">Communication</div>
-      <div class="pole-sub">JADA Communication</div>
-      <div class="pole-desc">Marketing, impression, représentation commerciale et stratégie de visibilité pour les entreprises et les marques.</div>
-    </div>
-    <div class="pole-card">
-      <span class="pole-icon">🎓</span>
-      <div class="pole-name">Formation</div>
-      <div class="pole-sub">JADA Formation</div>
-      <div class="pole-desc">Conseil, formation professionnelle et développement des compétences pour renforcer l'excellence opérationnelle.</div>
-    </div>
-    <div class="pole-card">
-      <span class="pole-icon">💼</span>
-      <div class="pole-name">Services Financiers</div>
-      <div class="pole-sub">JADA Finance</div>
-      <div class="pole-desc">Comptabilité, audit et conseil fiscal pour entreprises et particuliers. Rigueur et confidentialité.</div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══ CONTACT ═══ -->
-<section id="contact" style="max-width:900px">
-  <p class="section-eyebrow">Contact</p>
-  <h2 class="section-title">Échangeons</h2>
-  <div class="contact-block">
-    <div class="contact-grid">
-      <div class="contact-item">
-        <span class="contact-icon">📧</span>
-        <div class="contact-label">Email</div>
-        <div class="contact-value"><a href="mailto:prestations.jada@gmail.com">prestations.jada@gmail.com</a></div>
-      </div>
-      <div class="contact-item">
-        <span class="contact-icon">📞</span>
-        <div class="contact-label">Téléphone</div>
-        <div class="contact-value"><a href="tel:+22966593943">+229 01 66 59 39 43</a></div>
-      </div>
-      <div class="contact-item">
-        <span class="contact-icon">💬</span>
-        <div class="contact-label">WhatsApp</div>
-        <div class="contact-value"><a href="https://wa.me/22966593943" target="_blank" rel="noopener">+229 66 59 39 43</a></div>
-      </div>
-      <div class="contact-item">
-        <span class="contact-icon">✈️</span>
-        <div class="contact-label">Telegram</div>
-        <div class="contact-value"><a href="https://t.me/JadaPrestations" target="_blank" rel="noopener">@JadaPrestations</a></div>
+  <!-- ─── HERO ─── -->
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
+        <div>
+          <div class="hero-badge">🇧🇯 Cotonou, Bénin</div>
+          <h1>Votre partenaire <em>multi-services</em> de confiance</h1>
+          <p>
+            JADA PRESTATIONS SARL réunit <strong>5 pôles d'expertise</strong> — 
+            de la fourniture bureautique à la formation, en passant par la 
+            livraison, la communication et les services financiers — 
+            pour accompagner TPE, PME et particuliers au Bénin et en Afrique de l'Ouest.
+          </p>
+          <div class="hero-actions">
+            <a href="#poles" class="btn-primary">Découvrir nos pôles →</a>
+            <a href="#contact" class="btn-secondary">Nous contacter</a>
+          </div>
+        </div>
+        <div class="hero-visual">
+          <div class="hero-frame">
+            <div class="line line-tl"></div>
+            <div class="line line-br"></div>
+            <div class="hero-frame-inner">
+              <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect x="20" y="20" width="160" height="160" stroke="#D4AF37" stroke-width="2" rx="8"/>
+                <path d="M100 40 L100 160" stroke="#D4AF37" stroke-width="1.5" stroke-dasharray="4 4"/>
+                <path d="M40 100 L160 100" stroke="#D4AF37" stroke-width="1.5" stroke-dasharray="4 4"/>
+                <circle cx="100" cy="100" r="35" fill="rgba(212,175,55,.1)" stroke="#D4AF37" stroke-width="1.5"/>
+                <text x="100" y="108" text-anchor="middle" fill="#D4AF37" font-family="'Plus Jakarta Sans',sans-serif" font-size="18" font-weight="700">JADA</text>
+                <path d="M30 170 Q50 150 70 170 Q90 150 100 160" stroke="#F5E6B8" stroke-width="1" fill="none" opacity=".3"/>
+                <path d="M160 170 Q170 155 180 170 Q190 155 200 165" stroke="#F5E6B8" stroke-width="1" fill="none" opacity=".3"/>
+              </svg>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="address-row">
-      <p>Akpakpa — Avotrou, <span>Cotonou</span>, Bénin</p>
+  </section>
+
+  <!-- ─── POLES ─── -->
+  <section id="poles">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Nos pôles</div>
+        <h2 class="section-title">5 expertises, une seule adresse</h2>
+        <p class="section-sub">
+          Chaque pôle est pensé pour répondre aux besoins concrets des entreprises 
+          et particuliers — de l'équipement de bureau à la stratégie de communication.
+        </p>
+      </div>
+      <div class="poles-grid">
+
+        <div class="pole-card">
+          <div class="icon">📎</div>
+          <h3>Fourniture Bureautique</h3>
+          <p>Papeterie, consommables informatiques, mobilier de bureau et équipements professionnels pour équiper votre espace de travail.</p>
+        </div>
+
+        <div class="pole-card">
+          <div class="icon">🚚</div>
+          <h3>ZéJo — Livraison</h3>
+          <p>Service de livraison rapide et fiable. <em>"Prends ça, on l'envoie"</em> — colis, documents, courses, tout ce qui tient dans un véhicule.</p>
+        </div>
+
+        <div class="pole-card">
+          <div class="icon">📡</div>
+          <h3>Communication</h3>
+          <p>Création de contenu, gestion de réseaux sociaux, branding, conception graphique et stratégie de communication digitale.</p>
+        </div>
+
+        <div class="pole-card">
+          <div class="icon">🎓</div>
+          <h3>Formation</h3>
+          <p>Programmes de formation professionnelle sur mesure : bureautique, marketing digital, gestion d'entreprise et développement personnel.</p>
+        </div>
+
+        <div class="pole-card">
+          <div class="icon">💰</div>
+          <h3>Services Financiers</h3>
+          <p>Conseil en gestion financière, accompagnement administratif, optimisation fiscale et solutions de financement pour TPE/PME.</p>
+        </div>
+
+      </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ═══ CTA ═══ -->
-<div class="cta-bar">
-  <p class="section-eyebrow">Besoin d'un service ?</p>
-  <h2>Parlons de votre projet</h2>
-  <p>Une question, un besoin, une idée ? On vous répond sous 24h.</p>
-  <a href="https://wa.me/22966593943" target="_blank" rel="noopener" class="btn-whatsapp">
-    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-    Écrire sur WhatsApp
-  </a>
-</div>
+  <!-- ─── ABOUT ─── -->
+  <section id="about" style="background:var(--slate)">
+    <div class="container">
+      <div class="about-grid">
+        <div class="about-visual">
+          <div class="stat-card">
+            <span class="num">7+</span>
+            <span class="label">Années d'expertise</span>
+          </div>
+          <div class="stat-card">
+            <span class="num">340+</span>
+            <span class="label">Clients accompagnés</span>
+          </div>
+          <div class="stat-card">
+            <span class="num">5</span>
+            <span class="label">Pôles d'expertise</span>
+          </div>
+          <div class="stat-card">
+            <span class="num">🇧🇯</span>
+            <span class="label">Cotonou — Afrique</span>
+          </div>
+        </div>
+        <div class="about-text">
+          <div class="section-label">À propos</div>
+          <h3>JADA PRESTATIONS SARL</h3>
+          <p>
+            Basée à Akpakpa-Avotrou, Cotonou, JADA PRESTATIONS est née de la volonté 
+            de créer un guichet unique de services pour les entreprises et particuliers 
+            au Bénin et en Afrique de l'Ouest.
+          </p>
+          <p>
+            Notre modèle : <strong>5 pôles complémentaires</strong> qui couvrent 
+            l'essentiel des besoins d'une TPE ou PME — de l'achat de fournitures 
+            à la stratégie de communication, en passant par la livraison (ZéJo), 
+            la formation des équipes et l'accompagnement financier.
+          </p>
+          <p>
+            Présents sur <strong>ComeUp</strong> depuis 2020 avec plus de 340 missions 
+            réalisées, nous allons expertise locale et standards internationaux.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-<!-- ═══ FOOTER ═══ -->
-<div class="site-footer">
-  <p>JADA PRESTATIONS ◆ SARL</p>
-  <small>RCCM RB/PNO/26 B 6860</small>
-</div>
+  <!-- ─── CONTACT ─── -->
+  <section id="contact">
+    <div class="container">
+      <div class="section-header">
+        <div class="section-label">Contact</div>
+        <h2 class="section-title">Parlons de votre projet</h2>
+        <p class="section-sub">
+          Que vous ayez besoin d'un devis, d'une information ou d'un accompagnement 
+          personnalisé, notre équipe vous répond sous 24h.
+        </p>
+      </div>
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h3>Nos coordonnées</h3>
+          <p>
+            Akpakpa-Avotrou, Cotonou, Bénin.<br>
+            Du lundi au vendredi, 8h-18h.
+          </p>
+
+          <div class="contact-item">
+            <div class="ci-icon">📞</div>
+            <div>
+              <div class="ci-label">Téléphone / WhatsApp</div>
+              <div class="ci-value"><a href="https://wa.me/22966593943">+229 66 59 39 43</a></div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="ci-icon">✉️</div>
+            <div>
+              <div class="ci-label">Email</div>
+              <div class="ci-value"><a href="mailto:prestations.jada@gmail.com">prestations.jada@gmail.com</a></div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="ci-icon">📍</div>
+            <div>
+              <div class="ci-label">Adresse</div>
+              <div class="ci-value">Akpakpa-Avotrou, Cotonou</div>
+            </div>
+          </div>
+
+          <div class="contact-item">
+            <div class="ci-icon">🔗</div>
+            <div>
+              <div class="ci-label">Freelance</div>
+              <div class="ci-value"><a href="https://comeup.com" target="_blank">ComeUp — JADA PRESTATIONS</a></div>
+            </div>
+          </div>
+
+          <a href="https://wa.me/22966593943" class="btn-primary" style="margin-top:24px">
+            💬 Écrire sur WhatsApp →
+          </a>
+        </div>
+
+        <div class="contact-form">
+          <h4>Envoyez-nous un message</h4>
+          <form action="https://formspree.io/f/xqapwzqe" method="POST">
+            <div class="form-group">
+              <input type="text" name="nom" placeholder="Votre nom" required>
+            </div>
+            <div class="form-group">
+              <input type="email" name="email" placeholder="Votre email" required>
+            </div>
+            <div class="form-group">
+              <input type="text" name="sujet" placeholder="Sujet">
+            </div>
+            <div class="form-group">
+              <textarea name="message" placeholder="Votre message..." required></textarea>
+            </div>
+            <button type="submit" class="btn-primary" style="width:100%;justify-content:center;border:none;cursor:pointer">
+              Envoyer →
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a href="#" class="logo"><span class="mark"></span> JADA<span>.</span></a>
+          <p>
+            JADA PRESTATIONS SARL — Votre partenaire multi-services 
+            à Cotonou, Bénin. 5 pôles, une seule mission : vous accompagner 
+            au quotidien.
+          </p>
+        </div>
+        <div class="footer-col">
+          <h4>Pôles</h4>
+          <a href="#poles">Bureautique</a>
+          <a href="#poles">ZéJo Livraison</a>
+          <a href="#poles">Communication</a>
+          <a href="#poles">Formation</a>
+          <a href="#poles">Services Financiers</a>
+        </div>
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <a href="https://wa.me/22966593943">WhatsApp</a>
+          <a href="mailto:prestations.jada@gmail.com">Email</a>
+          <a href="#contact">Formulaire</a>
+        </div>
+        <div class="footer-col">
+          <h4>Informations</h4>
+          <a href="#about">À propos</a>
+          <a href="#">Mentions légales</a>
+          <a href="#">Confidentialité</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>© 2026 JADA PRESTATIONS SARL. Tous droits réservés.</span>
+        <span>Design & Développement · JADA Communication</span>
+      </div>
+    </div>
+  </footer>
 
 </body>
 </html>

@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>JADA PRESTATIONS — Groupe Multi-Services | Bénin</title>
+  <meta name="description" content="JADA PRESTATIONS : Fourniture bureautique, livraison, communication, formation et services financiers. Cotonou, Bénin & Afrique de l'Ouest.">
+  <meta name="theme-color" content="#0D1B2A">
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M47.5,30 L62.5,50 L47.5,70 L32.5,50 Z' fill='%23C9A84C'/%3E%3Cpath d='M40,10 L70,50 L40,90 L10,50 Z' fill='none' stroke='%23C9A84C' stroke-width='2'/%3E%3Cpath d='M55,10 L85,50 L55,90 L25,50 Z' fill='none' stroke='%23C9A84C' stroke-width='2'/%3E%3C/svg%3E">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Barlow:wght@300;400;500;600&family=Barlow+Condensed:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --navy:      #0D1B2A;
+      --navy-mid: #1A2E45;
+      --navy-lt:  #243B55;
+      --gold:      #C9A84C;
+      --gold-lt:  #E2C97E;
+      --gold-dk:  #A07830;
+      --cream:    #F5F0E8;
+      --white:    #FFFFFF;
+      --grey:      #8A9BB0;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Barlow', sans-serif;
+      background: var(--cream);
+      color: var(--navy);
+      line-height: 1.6;
+    }
+
+    /* ── HERO ── */
+    .hero {
+      background: var(--navy);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      padding: 60px 24px;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 80% 60% at 50% 100%, rgba(201,168,76,0.12) 0%, transparent 70%),
+        radial-gradient(ellipse 40% 40% at 10% 20%, rgba(201,168,76,0.06) 0%, transparent 60%);
+    }
+    .hero-grid {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(rgba(201,168,76,0.04) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(201,168,76,0.04) 1px, transparent 1px);
+      background-size: 60px 60px;
+    }
+    .hero-content { position: relative; z-index: 2; text-align: center; max-width: 800px; }
+
+    .logo-svg { margin-bottom: 24px; animation: fadeUp 1s ease both; }
+
+    .tagline {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 11px; letter-spacing: 6px; text-transform: uppercase;
+      color: var(--gold); margin-bottom: 16px;
+      animation: fadeUp 1s 0.2s ease both;
+    }
+    .hero-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(42px, 8vw, 80px);
+      font-weight: 300; color: var(--white);
+      letter-spacing: 8px; line-height: 1;
+      animation: fadeUp 1s 0.3s ease both;
+    }
+    .hero-title span { color: var(--gold); font-weight: 600; }
+    .hero-sub {
+      font-size: 13px; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--grey); margin-top: 16px;
+      animation: fadeUp 1s 0.4s ease both;
+    }
+    .gold-line {
+      width: 80px; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      margin: 32px auto;
+      animation: fadeUp 1s 0.5s ease both;
+    }
+    .hero-poles {
+      display: flex; gap: 16px; flex-wrap: wrap; justify-content: center;
+      animation: fadeUp 1s 0.6s ease both;
+    }
+    .pole-tag {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--gold-lt);
+      border: 1px solid rgba(201,168,76,0.3);
+      padding: 6px 14px; border-radius: 2px;
+    }
+
+    .hero-cta {
+      margin-top: 48px;
+      animation: fadeUp 1s 0.7s ease both;
+    }
+    .btn-primary {
+      display: inline-block;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
+      background: var(--gold); color: var(--navy);
+      padding: 14px 36px; border-radius: 3px;
+      text-decoration: none; font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .btn-primary:hover {
+      background: var(--gold-lt);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(201,168,76,0.3);
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(24px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ── SECTION ── */
+    section { padding: 80px 24px; max-width: 1100px; margin: 0 auto; }
+    .section-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 10px; letter-spacing: 5px; text-transform: uppercase;
+      color: var(--gold-dk); margin-bottom: 12px;
+    }
+    .section-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(28px, 4vw, 36px);
+      font-weight: 600; color: var(--navy);
+      margin-bottom: 48px; padding-bottom: 16px;
+      border-bottom: 1px solid rgba(13,27,42,0.1);
+    }
+
+    /* ── POLES ── */
+    .poles-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 20px;
+    }
+    .pole-card {
+      background: var(--white);
+      border-radius: 4px;
+      padding: 28px 24px;
+      box-shadow: 0 4px 20px rgba(13,27,42,0.06);
+      border-top: 3px solid var(--gold);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    .pole-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(13,27,42,0.12);
+    }
+    .pole-icon { font-size: 28px; margin-bottom: 12px; }
+    .pole-name {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 16px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--navy);
+      margin-bottom: 4px;
+    }
+    .pole-tag-name {
+      font-size: 11px; color: var(--gold-dk); font-weight: 500;
+      margin-bottom: 10px;
+      font-family: 'Barlow Condensed', sans-serif;
+      letter-spacing: 1px; text-transform: uppercase;
+    }
+    .pole-desc {
+      font-size: 13px; color: var(--grey); line-height: 1.6;
+    }
+
+    /* ── CONTACT ── */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 24px;
+    }
+    .contact-card {
+      background: var(--white);
+      border-radius: 4px;
+      padding: 28px 24px;
+      text-align: center;
+      box-shadow: 0 4px 20px rgba(13,27,42,0.06);
+      transition: transform 0.2s ease;
+    }
+    .contact-card:hover { transform: translateY(-4px); }
+    .contact-icon { font-size: 32px; margin-bottom: 12px; }
+    .contact-label {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--gold-dk); margin-bottom: 8px;
+    }
+    .contact-value {
+      font-size: 15px; color: var(--navy); font-weight: 500;
+    }
+    .contact-card a {
+      color: var(--navy);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .contact-card a:hover { color: var(--gold-dk); }
+
+    .address-box {
+      background: var(--navy);
+      border-radius: 4px;
+      padding: 32px;
+      text-align: center;
+      margin-top: 32px;
+      box-shadow: 0 4px 20px rgba(13,27,42,0.15);
+    }
+    .address-box .section-label { color: var(--gold-lt); }
+    .address-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 22px; color: var(--white);
+      letter-spacing: 2px; font-weight: 300;
+    }
+    .address-text span { color: var(--gold); font-weight: 600; }
+
+    /* ── CTA BOTTOM ── */
+    .cta-section {
+      background: var(--navy);
+      text-align: center;
+      padding: 80px 24px;
+    }
+    .cta-section .section-label { color: var(--gold-lt); }
+    .cta-section h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(28px, 4vw, 36px);
+      color: var(--white); font-weight: 300;
+      letter-spacing: 4px; margin-bottom: 12px;
+    }
+    .cta-section p {
+      color: var(--grey); font-size: 14px;
+      max-width: 500px; margin: 0 auto 32px;
+    }
+    .btn-whatsapp {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 12px; letter-spacing: 3px; text-transform: uppercase;
+      background: #25D366; color: white;
+      padding: 14px 36px; border-radius: 3px;
+      text-decoration: none; font-weight: 600;
+      transition: all 0.3s ease;
+    }
+    .btn-whatsapp:hover {
+      background: #1DA851;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(37,211,102,0.3);
+    }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      background: #081220;
+      text-align: center;
+      padding: 32px 24px;
+    }
+    .site-footer p {
+      font-family: 'Barlow Condensed', sans-serif;
+      font-size: 10px; letter-spacing: 3px; text-transform: uppercase;
+      color: var(--grey); margin-bottom: 4px;
+    }
+    .site-footer .gold-dot { color: var(--gold); }
+    .site-footer small {
+      font-size: 9px; color: rgba(138,155,176,0.5);
+      letter-spacing: 2px;
+    }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 600px) {
+      section { padding: 48px 20px; }
+      .poles-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ═══ HERO ═══ -->
+<div class="hero">
+  <div class="hero-grid"></div>
+  <div class="hero-content">
+
+    <!-- Logo -->
+    <div class="logo-svg">
+      <svg width="200" height="96" viewBox="0 0 250 120" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="goldGrad" x1="40" y1="20" x2="60" y2="80" gradientUnits="userSpaceOnUse">
+            <stop offset="0%" stop-color="#E2C97E"/><stop offset="50%" stop-color="#C9A84C"/><stop offset="100%" stop-color="#A07830"/>
+          </linearGradient>
+        </defs>
+        <g transform="translate(10,15)">
+          <path d="M47.5,30 L62.5,50 L47.5,70 L32.5,50 Z" fill="url(#goldGrad)"/>
+          <path d="M40,10 L70,50 L40,90 L10,50 Z" fill="none" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round" opacity="0.8"/>
+          <path d="M55,10 L85,50 L55,90 L25,50 Z" fill="none" stroke="#C9A84C" stroke-width="1.8" stroke-linecap="round"/>
+        </g>
+        <text x="110" y="50" font-family="Cormorant Garamond, serif" font-size="30" font-weight="600" fill="#FFFFFF" letter-spacing="4">JADA</text>
+        <text x="111" y="72" font-family="Barlow Condensed, sans-serif" font-size="13" font-weight="400" fill="#8A9BB0" letter-spacing="7">PRESTATIONS</text>
+        <line x1="110" y1="58" x2="240" y2="58" stroke="#C9A84C" stroke-width="0.5" opacity="0.4"/>
+      </svg>
+    </div>
+
+    <p class="tagline">Groupe Multi-Services</p>
+    <h1 class="hero-title">JADA <span>PRESTATIONS</span></h1>
+    <p class="hero-sub">Bénin & Afrique de l'Ouest</p>
+
+    <div class="gold-line"></div>
+
+    <div class="hero-poles">
+      <span class="pole-tag">Fourniture Bureautique</span>
+      <span class="pole-tag">Livraison</span>
+      <span class="pole-tag">Communication</span>
+      <span class="pole-tag">Formation</span>
+      <span class="pole-tag">Services Financiers</span>
+    </div>
+
+    <div class="hero-cta">
+      <a href="#contact" class="btn-primary">Nous contacter</a>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ PÔLES ═══ -->
+<section id="poles">
+  <p class="section-label">01 — Notre offre</p>
+  <h2 class="section-title">Les Pôles JADA</h2>
+  <div class="poles-grid">
+
+    <div class="pole-card">
+      <div class="pole-icon">🖇️</div>
+      <div class="pole-name">Fourniture Bureautique</div>
+      <div class="pole-tag-name">JDP Fourniture Bureautique</div>
+      <div class="pole-desc">Achat et vente de matériels et équipements de bureau pour professionnels, institutions et collectivités. Solutions complètes adaptées à vos besoins.</div>
+    </div>
+
+    <div class="pole-card">
+      <div class="pole-icon">🚚</div>
+      <div class="pole-name">Livraison</div>
+      <div class="pole-tag-name">JDP Livraison — ZéJo</div>
+      <div class="pole-desc">Transport et livraison locale rapide. Prise en charge de vos colis et documents avec réactivité et fiabilité sur Cotonou et environs.</div>
+    </div>
+
+    <div class="pole-card">
+      <div class="pole-icon">📣</div>
+      <div class="pole-name">Communication</div>
+      <div class="pole-tag-name">JADA Communication</div>
+      <div class="pole-desc">Marketing, impression, représentation commerciale et stratégie de visibilité pour votre marque. Nous donnons de la voix à votre entreprise.</div>
+    </div>
+
+    <div class="pole-card">
+      <div class="pole-icon">🎓</div>
+      <div class="pole-name">Formation</div>
+      <div class="pole-tag-name">JADA Formation</div>
+      <div class="pole-desc">Conseil, formation professionnelle et développement des compétences. Des programmes conçus pour renforcer l'excellence opérationnelle de vos équipes.</div>
+    </div>
+
+    <div class="pole-card">
+      <div class="pole-icon">💼</div>
+      <div class="pole-name">Services Financiers</div>
+      <div class="pole-tag-name">JADA Finance</div>
+      <div class="pole-desc">Comptabilité, audit et conseil fiscal pour les entreprises et particuliers. Une approche rigoureuse au service de votre santé financière.</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ═══ CONTACT ═══ -->
+<section id="contact">
+  <p class="section-label">02 — Contact</p>
+  <h2 class="section-title">Restons en contact</h2>
+
+  <div class="contact-grid">
+    <div class="contact-card">
+      <div class="contact-icon">📧</div>
+      <div class="contact-label">Email</div>
+      <div class="contact-value">
+        <a href="mailto:prestations.jada@gmail.com">prestations.jada@gmail.com</a>
+      </div>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-icon">📞</div>
+      <div class="contact-label">Téléphone</div>
+      <div class="contact-value">
+        <a href="tel:+22966593943">+229 01 66 59 39 43</a>
+      </div>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-icon">💬</div>
+      <div class="contact-label">WhatsApp</div>
+      <div class="contact-value">
+        <a href="https://wa.me/22966593943" target="_blank" rel="noopener">+229 66 59 39 43</a>
+      </div>
+    </div>
+
+    <div class="contact-card">
+      <div class="contact-icon">✈️</div>
+      <div class="contact-label">Telegram</div>
+      <div class="contact-value">
+        <a href="https://t.me/JadaPrestations" target="_blank" rel="noopener">@JadaPrestations</a>
+      </div>
+    </div>
+  </div>
+
+  <div class="address-box">
+    <p class="section-label">Adresse</p>
+    <div class="address-text">
+      Akpakpa — Avotrou, <span>Cotonou</span>, Bénin
+    </div>
+  </div>
+</section>
+
+<!-- ═══ CTA BOTTOM ═══ -->
+<div class="cta-section">
+  <p class="section-label">Prêt à collaborer ?</p>
+  <h2>Parlons de votre projet</h2>
+  <p>Une question, un besoin, une idée ? Notre équipe vous répond sous 24h.</p>
+  <a href="https://wa.me/22966593943" target="_blank" rel="noopener" class="btn-whatsapp">
+    <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+    Écrire sur WhatsApp
+  </a>
+</div>
+
+<!-- ═══ FOOTER ═══ -->
+<div class="site-footer">
+  <p>JADA PRESTATIONS <span class="gold-dot">◆</span> SARL</p>
+  <p>Akpakpa — Avotrou, Cotonou, Bénin</p>
+  <small>RCCM RB/PNO/26 B 6860</small>
+</div>
+
+</body>
+</html>
